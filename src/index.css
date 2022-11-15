@@ -1,0 +1,248 @@
+/* ---------- root variables ---------- */
+:root {
+  --green: rgb(38, 76, 89);
+  --green-opacity: rgba(38, 76, 89, 0.2);
+  --light-green: rgb(172, 198, 201);
+  --light-grey: #f1f1f4;
+  --text-color-light: #f1f1f1;
+  --text-color-dark: #333;
+  --white: #fff;
+  --font-family: "Montserrat ", Helvetica, Arial, sans-serif;
+}
+
+/* ---------- general styling ---------- */
+html,
+body {
+  color: var(--text-color-dark);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: linear-gradient(180deg, rgba(2, 43, 82, 0.2) 0%, #022B52 100%);
+  height: 1650px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin: 0.2em 0;
+}
+
+h3 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0.5em 0 0.2em;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--green);
+}
+
+/* ---------- nav styling ---------- */
+nav {
+  background-color: var(--light-green);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  grid-area: nav;
+  z-index: 1;
+}
+
+/* Style the links inside the navigation bar */
+nav a {
+  display: inline-block;
+  color: var(--green);
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Change the color of links on hover */
+nav a:hover {
+  background-color: var(--light-grey);
+}
+
+/* Add a color to the active/current link */
+nav a.active {
+  background-color: var(--light-green);
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    background-color: lightblue;
+   
+  }
+}
+
+/* ---------- grid container styling ---------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  gap: 1em;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.grid-container > article {
+  text-align: center;
+  padding: 2em 1em;
+  background-color: var(--white);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.grid-container > article:hover {
+  box-shadow: 0 8px 16px 0 var(--green-opacity);
+}
+
+.grid-container > article img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+/* ---------- page grid styling ---------- */
+
+/* The grid container */
+.page-layout {
+  display: grid;
+  grid-template-areas:
+      "nav"
+      "header"
+      "left"
+      "middle"
+      "right";
+}
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (min-width: 600px) {
+  .page-layout {
+      grid-template-areas:
+          "nav nav nav"
+          "header header header"
+          "left middle right";
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-layout {
+      grid-template-areas:
+          "nav nav nav nav"
+          "header header header header"
+          "left middle middle right";
+  }
+}
+
+/* Style the header */
+header,
+.header {
+  grid-area: header;
+  background-color: var(--green);
+  color: var(--text-color-light);
+  text-align: center;
+  font-size: 2em;
+  height: auto;
+  
+}
+
+.left,
+.middle,
+.right {
+  margin: 15%;
+  padding: 1em;
+  border-radius: 20px;
+  height: calc(30vh); /* Should be removed. Only for demonstration */
+  position: relative;
+  bottom: 50px;
+  
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+  background-color: gray;
+  background-image: url(img/bro.jpg);
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+  background-color: gray;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+  background-color: gray;
+}
+
+.buttonLeft{
+ position: relative;
+ top: 280px;
+ float: left;
+ margin-left: 20px;
+ border-radius: 5px;
+ background-color: #D9D9D9;
+ padding: 1em;
+ width: 70px;
+  
+}
+
+.buttonRight{
+  position: relative;
+  top: 280px;
+  float: right;
+  margin-right: 20px;
+  border-radius: 5px;
+  background-color: #D9D9D9;
+  padding: 1em;
+  width: 70px;
+  
+ }
+
+ .logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+ }
+ 
+ .navlogo{
+  width: 60px;
+  height: 60px;
+  position: relative;
+  bottom: 40px;
+  background-color:  #022B52 ;
+  border-radius: 50px;
+  border: 8px solid #022B52;
+
+ }
